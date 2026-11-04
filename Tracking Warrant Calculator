@@ -48,7 +48,7 @@ input{width:100%;padding:12px;font-size:18px}
 
 <p class="small">
 Calculates 60 days after the issue date,
-excluding the issue date itself.
+excluding the issue date itself (as per Interpretation Act and the Criminal Code of Canada).
 </p>
 
 </div>
