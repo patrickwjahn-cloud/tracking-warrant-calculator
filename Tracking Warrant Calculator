@@ -33,7 +33,7 @@ input{width:100%;padding:12px;font-size:18px}
 <div class="small">Day 60 / Expiry Date</div>
 <div id="expiry" class="expiry"></div>
 
-<div class="time">Expires at 11:59 PM AT THE LATEST</div>
+<div class="time">Expires at 11:59 PM  (AT THE LATEST)</div>
 
 <br>
 
