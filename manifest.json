@@ -1,1 +1,15 @@
-
+{
+  "name": "Tracking Warrant Calculator",
+  "short_name": "WarrantCalc",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#163a63",
+  "theme_color": "#163a63",
+  "icons": [
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
