@@ -80,6 +80,11 @@ issue.value=new Date().toISOString().split('T')[0];
 issue.addEventListener('change',calc);
 calc();
 </script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js');
+}
+</script>
 
 </body>
 </html>
