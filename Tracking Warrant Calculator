@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tracking Warrant Calculator</title>
+<style>
+body{margin:0;background:#f4f6f8;font-family:Arial,sans-serif;color:#222}
+.header{background:#163a63;color:#fff;padding:18px;font-size:28px;font-weight:bold;text-align:center}
+.card{max-width:520px;margin:20px auto;background:#fff;border-radius:12px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,.12)}
+label{display:block;font-weight:bold;margin-bottom:8px}
+input{width:100%;padding:12px;font-size:18px}
+.box{margin-top:20px;padding:16px;background:#f8fafc;border:1px solid #d9e1ea;border-radius:10px}
+.small{color:#666;font-size:14px}
+.expiry{font-size:32px;font-weight:bold;color:#163a63;margin:8px 0}
+.weekday{font-size:24px;font-weight:bold}
+.time{font-size:18px;color:#163a63}
+</style>
+</head>
+
+<body>
+
+<div class="header">Tracking Warrant Calculator</div>
+
+<div class="card">
+
+<label for="issue">Tracking Warrant Issue Date</label>
+<input id="issue" type="date">
+
+<div class="box">
+
+<div class="small">Day 60 / Expiry Date</div>
+<div id="expiry" class="expiry"></div>
+
+<div class="time">Expires at 11:59 PM</div>
+
+<br>
+
+<div class="small">Day of Week</div>
+<div id="weekday" class="weekday"></div>
+
+<br>
+
+<div>Days Counted: 60 (issue date excluded)</div>
+
+</div>
+
+<p class="small">
+Calculates 60 days after the issue date,
+excluding the issue date itself.
+</p>
+
+</div>
+
+<script>
+const issue=document.getElementById('issue');
+const expiry=document.getElementById('expiry');
+const weekday=document.getElementById('weekday');
+
+function calc(){
+if(!issue.value) return;
+
+const d=new Date(issue.value+'T00:00:00');
+d.setDate(d.getDate()+60);
+
+expiry.textContent=d.toLocaleDateString('en-CA',{
+year:'numeric',
+month:'long',
+day:'numeric'
+});
+
+weekday.textContent=d.toLocaleDateString('en-CA',{
+weekday:'long'
+});
+}
+
+issue.value=new Date().toISOString().split('T')[0];
+issue.addEventListener('change',calc);
+calc();
+</script>
+
+</body>
+</html>
